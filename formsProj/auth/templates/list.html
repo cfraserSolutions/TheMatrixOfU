@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<link href="/static/css/base.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Nixie+One" rel="stylesheet"> 
+	</head>
+	<body>	
+		<h1>{{ category }}</h1>
+		
+		{% if dateid %}
+			<div class="container">
+			{% for obj in dateid %}
+				<a href="{{ obj.id }}">
+					<div class="card">
+						<p class="card_top"> {{ obj.id }}</p>
+						<p class="card_base">{{ obj.date }}</p>
+					</div>
+				</a>
+			
+			
+			{% endfor %}
+			</div>
+		{% else %}
+			<p>None yet</p>
+		{% endif %} 
+	</body>
+</html>
+

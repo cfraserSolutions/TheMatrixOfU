@@ -1,0 +1,10 @@
+body
+{
+	background: linear-gradient(0deg,#A24B89 , #634C7F); 
+}
+
+#icon-1
+{
+	position: relative; 
+	top:50%;
+}

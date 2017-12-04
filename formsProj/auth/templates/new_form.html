@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/static/css/base.css" />
+	</head>
+	<body>
+		
+		<div id="white-bg">
+			<div id="title_container">
+				<input type="text" class="input_style_line" id="title_input" placeholder="Enter entry name">
+			</div>
+
+			<div class="center_contents" id="upload_button_container">
+				<div id="upload_image_button" class="gradient-button" for="fileInput"> 
+					<img class="icon" src="/static/images/camera.png" alt="upload image" width="80" height="80">
+					<input type="file" id="fileInput">
+				
+				</div>
+			</div>
+
+			<form action="." method="post">
+			    {% csrf_token %}
+			    {{ form.as_p }}
+			    <input type="submit" value="Submit" />
+			</form>
+		</div>
+
+	</body>
+</html>

@@ -15,14 +15,18 @@ class ImageUploadForm(forms.Form):
 class BloodPressureLogForm(forms.ModelForm):
 	class Meta:
 		model = BloodPressureLogModel 
-		fields = ['date' , 'reading', 'heartRate' , 'pulse' ,]
+		fields = ['date' , 'reading', 'heartRate' , 'pulse' , 'image']
 		widgets =  {
 		    	'date': forms.DateInput(attrs={'placeholder': datetime.date.today ,'class':'form_input'}),
 			'reading': forms.TextInput(attrs={'placeholder': 'Blood Pressure Reading','class':'form_input'}),
 			'heartRate': forms.TextInput(attrs={'placeholder': 'Heart Rate','class':'form_input'}),
 			'pulse': forms.TextInput(attrs={'placeholder': 'Pulse','class':'form_input'}),
+			'image': forms.FileInput(attrs={'id': 'fileInput'}),
+			
+			
        		}
-
+	
+  
 class PatientSummaryForm(forms.ModelForm):
 	class Meta:
 		model = PatientSummaryModel 
@@ -54,7 +58,7 @@ class PatientSummaryForm(forms.ModelForm):
 class DiagnosisHistoryForm(forms.ModelForm):
 	class Meta:
 		model= DiagnosisHistoryModel
-		fields= ['date' , 'symptomsDescription' , 'diagnosis' , 'clinic' ,]
+		fields= ['date' , 'symptomsDescription' , 'diagnosis' , 'clinic' , 'image']
 		widgets = {
 			'date': forms.DateInput(attrs={'placeholder': 'Date' ,'class':'form_input'}),
 
@@ -62,19 +66,21 @@ class DiagnosisHistoryForm(forms.ModelForm):
 			'symptomsDescription': forms.TextInput(attrs={'placeholder': 'Description of Symptoms','class':'form_input'}),
 			'diagnosis': forms.TextInput(attrs={'placeholder': 'Diagnosis','class':'form_input'}),
 			'clinic': forms.TextInput(attrs={'placeholder': 'Clinic','class':'form_input'}),
+			'image': forms.FileInput(attrs={'id': 'fileInput'}),
 			
 		}
 
 class AsthmaForm(forms.ModelForm):
 	class Meta:
 		model = AsthmaModel
-		fields = ['date', 'attackType' , 'treatment', 'nurseName']
+		fields = ['date', 'attackType' , 'treatment', 'nurseName', "image"]
 		
 		widgets = {
 			'date': forms.DateInput(attrs={'placeholder': 'Date' ,'class':'form_input'} ), 
 			'attackType': forms.TextInput(attrs={'placeholder': 'Type of attack','class':'form_input'}),
 			'treatment': forms.TextInput(attrs={'placeholder': 'What treatment was done','class':'form_input'}),
 			'nurseName': forms.TextInput(attrs={'placeholder': 'Name of attending nurse','class':'form_input'}),
+			'image': forms.FileInput(attrs={'id': 'fileInput'}),
 			
 		}
 
@@ -84,9 +90,9 @@ class SurgeriesForm(forms.ModelForm):
 		fields = ['date', 'surgeonName' , 'surgeryType', 'comments']
 		widgets = {
 			'date': forms.DateInput(attrs={'placeholder': 'Date' ,'class':'form_input'}),
-			'surgeonName': forms.TextInput(attrs={'placeholder': 'Type of attack','class':'form_input'}),
-			'surgeryType': forms.TextInput(attrs={'placeholder': 'What treatment was done','class':'form_input'}),
-			'comments': forms.TextInput(attrs={'placeholder': 'Name of attending nurse','class':'form_input'}),
+			'surgeonName': forms.TextInput(attrs={'placeholder': 'Surgeon Name','class':'form_input'}),
+			'surgeryType': forms.TextInput(attrs={'placeholder': 'Type of surgery','class':'form_input'}),
+			'comments': forms.TextInput(attrs={'placeholder': 'Comments','class':'form_input'}),
 			
 		}  
 

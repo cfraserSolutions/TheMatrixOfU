@@ -1,13 +1,29 @@
 <html>
 
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/static/css/base.css" type="text/css">
+ 
+	</head>
 	<body>
-		<table>
-		{% for row in table %}
-			<tr>
-				<td>{{ row.field }}</td>
-				<td> {{ row.value}}</td>
-			</tr>
-		{% endfor %}
-		</table>
+		<div id="white-bg">
+			<table>
+			{% for row in table %}
+				<tr>
+				
+					{% if row.field != "image" and row.field != "owner" %}
+					<td class="row_field">{{ row.field }}</td>
+					<td class="row_value"> {{ row.value}}</td>
+					{% endif %}
+				</tr>
+			{% endfor %}
+			</table>
+	
+
+		<img src="{{image}}" width="400" height="400" class="details_image"> </img>
+
+		</div>
+
+		
 	</body>
 </html>

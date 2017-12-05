@@ -6,5 +6,11 @@ body
 #icon-1
 {
 	position: relative; 
-	top:50%;
+	top:20%;
+}
+
+#icon-2
+{
+	position: relative; 
+	top: 30%; 
 }

@@ -17,6 +17,7 @@ class BloodPressureLogModel(models.Model):
 	heartRate = models.CharField(max_length=20)
 	pulse = models.CharField(max_length=20)
 	owner = models.ForeignKey(m.User , on_delete=models.CASCADE) 
+	image = models.ImageField(upload_to="auth/static/usr_images", null=True, blank=True);
 	
 class PatientSummaryModel(models.Model):
     name = models.CharField(max_length = 55)
@@ -40,6 +41,7 @@ class PatientSummaryModel(models.Model):
     kinHomeContact = models.IntegerField()
     kinCellContact = models.IntegerField()
     owner = models.ForeignKey(m.User , on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="auth/static/usr_images");
 
 
 class DiagnosisHistoryModel(models.Model):
@@ -47,7 +49,8 @@ class DiagnosisHistoryModel(models.Model):
     symptomsDescription = models.CharField(max_length = 500)
     diagnosis = models.CharField(max_length=30)
     clinic = models.CharField(max_length=25)
-    owner = models.ForeignKey(m.User  , on_delete=models.CASCADE)	
+    owner = models.ForeignKey(m.User  , on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="auth/static/usr_images", null=True, blank=True);	
 
 class DangerousMedicationModel(models.Model):
     date = models.DateField()
@@ -55,6 +58,7 @@ class DangerousMedicationModel(models.Model):
     effects = models.CharField(max_length=500)
     clinic = models.CharField(max_length=25)
     owner = models.ForeignKey(m.User , on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="auth/static/usr_images");
 
 class AsthmaModel(models.Model):
     date = models.DateField()
@@ -63,6 +67,7 @@ class AsthmaModel(models.Model):
     nurseName = models.CharField(max_length=50)
     clinic = models.CharField(max_length=25)
     owner = models.ForeignKey(m.User , on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="auth/static/usr_images", null=True, blank=True);
 
 class SurgeriesModel(models.Model):
     date = models.DateField(auto_now=False, auto_now_add=False)
@@ -71,6 +76,7 @@ class SurgeriesModel(models.Model):
     comments = models.CharField(max_length=600)
     clinic = models.CharField(max_length=25)
     owner = models.ForeignKey(m.User , on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="auth/static/usr_images");
 
 
 
